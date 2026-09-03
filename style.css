@@ -45,6 +45,10 @@ hr {
     max-height: 100%;
     max-width: 98%;
     border-radius: 5%;
+    border: 2px solid rgba(35, 255, 130, 0.8);
+    box-shadow: 0 0 8px rgba(35, 255, 130, 0.6),
+                0 0 16px rgba(35, 255, 130, 0.35),
+                0 0 24px rgba(35, 255, 130, 0.2);
     opacity: 0.9;
     z-index: -2;
 }
@@ -370,19 +374,57 @@ form input {
 }
 
 .skill-cantainer div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 6em;
     height: 3em;
     border-radius: 20px;
     margin: 3em;
     padding: 1em;
-    justify-items: center;
-    align-content: center;
-    background-color: #ffffff0e;
-    ;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.skill-cantainer div::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 23px;
+    padding: 3px;
+    border: 3px solid rgba(35, 255, 130, 0.9);
+    background: transparent;
+    box-shadow: 0 0 8px rgba(35, 255, 130, 0.68),
+                0 0 14px rgba(35, 255, 130, 0.56),
+                0 0 20px rgba(35, 255, 130, 0.4),
+                0 0 28px rgba(35, 255, 130, 0.22);
+    animation: skill-green-glow 1.1s ease-in-out infinite;
 }
 
 .skill-cantainer div p {
     margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes skill-green-glow {
+    0%, 100% {
+        box-shadow: 0 0 6px rgba(35, 255, 130, 0.58),
+                    0 0 12px rgba(35, 255, 130, 0.46),
+                    0 0 18px rgba(35, 255, 130, 0.32),
+                    0 0 24px rgba(35, 255, 130, 0.18);
+        opacity: 0.88;
+    }
+    50% {
+        box-shadow: 0 0 9px rgba(70, 255, 155, 0.75),
+                    0 0 17px rgba(70, 255, 155, 0.58),
+                    0 0 25px rgba(70, 255, 155, 0.42),
+                    0 0 34px rgba(70, 255, 155, 0.24);
+        opacity: 1;
+    }
 }
 
 /* projects */
